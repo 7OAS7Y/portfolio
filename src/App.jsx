@@ -5,6 +5,9 @@ import Page from './components/Page';
 import { Box, Container } from '@mui/material';
 import { element } from 'prop-types';
 import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Projects from './components/Projects';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect } from 'react';
@@ -18,47 +21,15 @@ const pages = [
   },
   {
     name: "About",
-    component: () => (
-      <Container sx={{
-        height: 800,
-        width: 800,
-        right: 0,
-        margin: 'auto',
-        display: 'grid',
-        justifyContent: 'center',
-        alignContent: 'center'
-      }}>
-        <p>Passionate and detail-oriented Front-End Developer with over 3 years of professional experience in designing, developing, and maintaining responsive websites and web applications. Proficient in HTML, CSS, JavaScript, and modern frameworks such as React. Proven ability to translate design concepts into functional, user-friendly digital experiences.</p>
-      </Container>
-    ),
+    element: <About />,
   },
   {
     name: "Projects",
-    component: () => (
-      <Container sx={{
-        height: 800,
-        width: 800,
-        right: 0,
-        margin: 'auto',
-        display: 'grid',
-        justifyContent: 'center',
-        alignContent: 'center'
-      }}>
-        <div id='container-inner'>
-          <h1>Projects</h1>
-        </div>
-      </Container>
-    ),
+    element: <Projects />,
   },
   {
     name: "Contact",
-    component: () => (
-      <div id='conatiner-inner'>
-        <h1>Contact</h1>
-        <p>This is more about us.</p>
-        {/* Add more content here */}
-      </div>
-    ),
+    element: <Contact />,
   },
 ];
 
@@ -67,12 +38,12 @@ const pages = [
 function App() {
 
 
-  useEffect(() => {
-    gsap.to('.home', {
-      scrollTrigger: '.home'
-      
-    })
-  }, [])
+  // useEffect(() => {
+  //   gsap.to('.home', {
+  //     scrollTrigger: '.home', // start the animation when ".home" enters the viewport (once)
+  //     y: 0
+  //   })
+  // }, [])
 
   return (
     <>
