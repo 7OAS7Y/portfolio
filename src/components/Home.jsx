@@ -1,14 +1,38 @@
-import {gsap} from 'gsap'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
 
-export default function Home() {
-    useEffect(() => {
-        gsap.fromTo('#container-inner', {autoAlpha: 0, x: "+=500"}, {duration: .7, autoAlpha: 1, x: 0})
-    }, [])
+const Home = () => {
+  useEffect(() => {
+    gsap.registerPlugin(TextPlugin);
+    gsap.to('#container-inner h1', {
+      duration: 2,
+      ease: "none",
+      text: {
+        value: "Joshua Crothers",
+        delimiter: '',
+        rtl: false
+      },
+      onComplete: () => {
+        gsap.to('#container-inner p', {
+          duration: 2,
+          ease: "none",
+          text: {
+            value: "Frontend Web Developer",
+            delimiter: '',
+            rtl: false
+          },
+        });
+      }
+    });
+  }, []);
+
   return (
     <div id='container-inner' className='home'>
-        <h1>Joshua Crothers</h1>
-        <p>Frontend Web Developer</p>
+      <h1></h1>
+      <p></p>
     </div>
-  )
-}
+  );
+};
+
+export default Home;
