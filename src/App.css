@@ -1,0 +1,22 @@
+#page-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+}
+p {
+    color: #000000;
+}
+
+#container-inner {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+}

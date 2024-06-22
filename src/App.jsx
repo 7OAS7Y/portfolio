@@ -1,77 +1,93 @@
-import { useState } from 'react'
-import TemporaryDrawer from './components/TemporaryDrawer'
-import './index.css'
 import VideoBackground from './components/VideoBackground'
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import './index.css'
+import './App.css'
+import Page from './components/Page';
+import { Box, Container } from '@mui/material';
+import { element } from 'prop-types';
+import Home from './components/Home';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect } from 'react';
 
-let router = createBrowserRouter([
+gsap.registerPlugin(ScrollTrigger) // Register ScrollTrigger
+
+const pages = [
   {
-    path: "/",
-    loader: () => ({ message: "Hello Data Router!" }),
-    Component() {
-      return <App/>;
-    },
-    children: [
-      {
-        index: true,
-        Component: () => {
-          return <h1>Home</h1>
-        },
-      },
-      {
-        path: "about",
-        Component: () => {
-          return <h1>About</h1>
-        },
-      },
-      {
-        path: "contact",
-        Component: () => {
-          return <h1>Contact</h1>
-        },
-      },
-      {
-        path: "projects",
-        Component: () => {
-          return <h1>Projects</h1>
-        },
-      },
-    ]
+    name: "Home",
+    element: <Home />,
   },
-]);
+  {
+    name: "About",
+    component: () => (
+      <Container sx={{
+        height: 800,
+        width: 800,
+        right: 0,
+        margin: 'auto',
+        display: 'grid',
+        justifyContent: 'center',
+        alignContent: 'center'
+      }}>
+        <p>Passionate and detail-oriented Front-End Developer with over 3 years of professional experience in designing, developing, and maintaining responsive websites and web applications. Proficient in HTML, CSS, JavaScript, and modern frameworks such as React. Proven ability to translate design concepts into functional, user-friendly digital experiences.</p>
+      </Container>
+    ),
+  },
+  {
+    name: "Projects",
+    component: () => (
+      <Container sx={{
+        height: 800,
+        width: 800,
+        right: 0,
+        margin: 'auto',
+        display: 'grid',
+        justifyContent: 'center',
+        alignContent: 'center'
+      }}>
+        <div id='container-inner'>
+          <h1>Projects</h1>
+        </div>
+      </Container>
+    ),
+  },
+  {
+    name: "Contact",
+    component: () => (
+      <div id='conatiner-inner'>
+        <h1>Contact</h1>
+        <p>This is more about us.</p>
+        {/* Add more content here */}
+      </div>
+    ),
+  },
+];
+
 
 
 function App() {
 
-  if (import.meta.hot) {
-    import.meta.hot.dispose(() => router.dispose());
-  }
 
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
-
-  const handleToggleDrawer = () => {
-      console.log(isDrawerOpen);
-      setDrawerOpen(!isDrawerOpen);
-  }
+  useEffect(() => {
+    gsap.to('.home', {
+      scrollTrigger: '.home'
+      
+    })
+  }, [])
 
   return (
-      <>
-        <VideoBackground isDrawerOpen={isDrawerOpen} handleToggleDrawer={handleToggleDrawer} />
-        <Outlet />
-        <TemporaryDrawer isDrawerOpen={isDrawerOpen} handleToggleDrawer={handleToggleDrawer} />
-      </>
+    <>
+      <VideoBackground />
+      <div id='page-container'>
+        {pages.map((page, index) => {
+          return (
+            <Page key={index} name={page.name}>
+              {page.element ? page.element : page.component()}
+            </Page>
+          )
+        })}
+      </div>
+    </>
   )
 }
 
-function Root() {
-
-  if (import.meta.hot) {
-    import.meta.hot.dispose(() => router.dispose());
-  }
-
-  return (
-      <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
-  )
-}
-
-export default Root
+export default App
