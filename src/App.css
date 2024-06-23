@@ -1,5 +1,4 @@
 #page-container {
-    width: 100vw;
     height: 100vh;
     position: relative;
     scroll-snap-points-y: repeat(100vh);

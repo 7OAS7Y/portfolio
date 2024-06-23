@@ -1,6 +1,9 @@
 * {
   overflow-x: hidden;
 }
+body {
+  margin: 0px;
+}
 
 :root {
   font-family: Pixel Code, system-ui, Avenir, Helvetica, Arial, sans-serif;
