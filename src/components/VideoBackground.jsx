@@ -6,7 +6,7 @@ export default function VideoBackground() {
 
     return (
         <>
-            <video ref={videoRef} id="bg-video" autoPlay loop muted>
+            <video ref={videoRef} id="bg-video" autoplay="" playsinline loop muted>
                 <source src={videoBg} type="video/mp4" />
             </video>
         </>
