@@ -52,7 +52,7 @@ function App() {
         {pages.map((page, index) => {
           return (
             <Page key={index} name={page.name}>
-              {page.element ? page.element : page.component()}
+              {page.element}
             </Page>
           )
         })}
