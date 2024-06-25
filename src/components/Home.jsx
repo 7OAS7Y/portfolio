@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
+import { Box } from '@mui/system';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 
 const Home = () => {
   useEffect(() => {
     gsap.registerPlugin(TextPlugin);
-    gsap.to('#container-inner h1', {
+    gsap.to('#animate-text-box h1', {
       duration: 2,
       ease: "none",
       text: {
@@ -14,7 +15,7 @@ const Home = () => {
         rtl: false
       },
       onComplete: () => {
-        gsap.to('#container-inner p', {
+        gsap.to('#animate-text-box p', {
           duration: 2,
           ease: "none",
           text: {
@@ -28,11 +29,17 @@ const Home = () => {
   }, []);
 
   return (
-    <div id='container-inner' className='home'>
+    <Box id='animate-text-box' 
+      sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'right',
+      alignItems: 'right',
+      }}>
       <h1></h1>
       <p></p>
-    </div>
+    </Box>
   );
 };
 
-export default Home;
+export default Home

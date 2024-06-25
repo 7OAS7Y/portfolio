@@ -13,7 +13,7 @@ const Projects = () => {
     p={2}
     backgroundColor="#cee3e782"
     sx={{ border: '2px solid #5c7282', textAlign: 'center', maxWidth: '800px', boxShadow: '0px 10px 100px 7px #324673e0' }}>
-      <div className='projects'>
+      <div>
         <h1>Projects</h1>
       </div>
     </Box>
