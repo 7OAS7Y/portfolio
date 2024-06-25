@@ -1,12 +1,17 @@
 import React from 'react'
+import { Box } from '@mui/system'
+import ScrollTrigger from 'react-scroll-trigger';
 import './Page.css'
+import { Stack } from '@mui/material';
 
-export default function Page({ name, children }) {
+export default function Page({ name, children, dir='column' }) {
 
   return (
-    <div className={`page ${name}`}>
-      {children}
-    </div>
+      <Box className={`page ${name}`}>
+        <Stack dir={dir} spacing={2}>
+          {children}
+        </Stack>
+      </Box>
   )
   
 }
