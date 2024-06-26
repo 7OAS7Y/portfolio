@@ -6,11 +6,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css'
 import './App.css'
-
-gsap.registerPlugin(ScrollTrigger) // Register ScrollTrigger
 
 const pages = [
   {

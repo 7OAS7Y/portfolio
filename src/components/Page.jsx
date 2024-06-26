@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box } from '@mui/system'
-import ScrollTrigger from 'react-scroll-trigger';
 import './Page.css'
 import { Stack } from '@mui/material';
 

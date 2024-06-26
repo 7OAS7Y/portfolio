@@ -1,44 +1,22 @@
 import React, { useEffect } from 'react';
+import Stack from '@mui/material/Stack';
 import { Box } from '@mui/system';
 import { gsap } from 'gsap';
-import { TextPlugin } from 'gsap/TextPlugin';
 
 const Home = () => {
   useEffect(() => {
-    gsap.registerPlugin(TextPlugin);
-    gsap.to('#animate-text-box h1', {
-      duration: 2,
-      ease: "none",
-      text: {
-        value: "Joshua Crothers",
-        delimiter: '',
-        rtl: false
-      },
-      onComplete: () => {
-        gsap.to('#animate-text-box p', {
-          duration: 2,
-          ease: "none",
-          text: {
-            value: "Frontend Web Developer",
-            delimiter: '',
-            rtl: false
-          },
-        });
-      }
-    });
+    gsap.fromTo('#animate-text-box', { x: -200, stagger: 4 }, { x: 0, duration: 3, ease: 'linear'})
   }, []);
 
   return (
-    <Box id='animate-text-box' 
-      sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'right',
-      alignItems: 'right',
-      }}>
-      <h1></h1>
-      <p></p>
-    </Box>
+    <Stack
+      direction="row"
+      spacing={{ xs: 1, sm: 2, md: 4 }}>
+      <Box id='animate-text-box'>
+        <h1>Joshua Crothers</h1>
+        <p>Frontend Web Developer</p>
+      </Box>
+    </Stack>
   );
 };
 
