@@ -1,4 +1,3 @@
-import VideoBackground from './components/VideoBackground'
 import { Box } from '@mui/system';
 import Page from './components/Page';
 import Home from './components/Home';
@@ -34,7 +33,6 @@ function App() {
 
   return (
     <>
-      <VideoBackground />
       <Box id='page-container'>
         {pages.map((page, index) => {
           return (

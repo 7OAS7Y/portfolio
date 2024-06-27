@@ -5,6 +5,10 @@ body {
   margin: 0px;
 }
 
+a {
+  color: #3e88b4;
+}
+
 :root {
   font-family: Pixel Code, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
