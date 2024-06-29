@@ -4,9 +4,15 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
-import { gsap } from 'gsap';
+import Joke from './components/Joke';
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import './index.css'
 import './App.css'
+
+
+
+gsap.registerPlugin(useGSAP);
 
 const pages = [
   {
@@ -24,6 +30,10 @@ const pages = [
   {
     name: "contact",
     element: <Contact />,
+  },
+  {
+    name: "contact",
+    element: <Joke />,
   },
 ];
 
