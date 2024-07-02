@@ -20,6 +20,7 @@ const Joke = () => {
   const jokeRef = useRef(null)
 
   useEffect(() => {
+    console.log(jokeRef)
     if (!jokeRef.current) return
     jokeRef.current.addEventListener('mouseenter', onMouseEnter)
     return () => {
@@ -32,7 +33,7 @@ const Joke = () => {
     randomX = Math.floor(Math.random() * (maxX - minX + 1) + minX)
     randomY = Math.floor(Math.random() * (maxY - minY + 1) + minY)
     
-    gsap.to("#joke", { x: randomX, y: randomY, duration: .5 })
+    gsap.to(jokeRef.current, { x: randomX, y: randomY, duration: .5 })
   }
 
 
