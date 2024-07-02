@@ -33,25 +33,25 @@ const Joke = () => {
     randomX = Math.floor(Math.random() * (maxX - minX + 1) + minX)
     randomY = Math.floor(Math.random() * (maxY - minY + 1) + minY)
     
-    gsap.to(jokeRef.current, { x: randomX, y: randomY, duration: .5 })
+    gsap.to(jokeRef.current, { x: randomX, y: randomY, duration: .2  })
   }
 
 
   return (
     <Stack>
-      <Box sx={{ m: 4, maxWidth: 800, border: '2px solid #324673', borderRadius: 3, boxShadow: '0px 10px 25px 0px #324673e0', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <Box sx={{ m: 4, maxWidth: 800, border: '2px solid #4ca67b', borderRadius: 3, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         <Box sx={{ m: 10, }}>
           <h1>Feel free to say no, but will you hire me?</h1>
         </Box>
         <Link href='https://www.linkedin.com/in/joshua-crothers-3592ba1b5/' target='_blank' rel="noopener" underline="none">
-          <Box sx={{ m: 2, display: 'flex', maxWidth: 500, border: '2px solid #324673', borderRadius: 3, boxShadow: '0px 10px 25px 0px #324673e0', justifyContent: 'center' }}>
-            <Box sx={{ m: 2, color: '#0077B5' }}>
+          <Box sx={{ m: 2, display: 'flex', maxWidth: 500, border: '2px solid #4ca67b', borderRadius: 3, boxShadow: '0px 10px 0px 0px #38a771e0', justifyContent: 'center' }}>
+            <Box sx={{ m: 2, color: '#4ca67b' }}>
               <h3>Absolutely!</h3>
             </Box>
           </Box>
         </Link>
-          <Box ref={jokeRef} id='joke' sx={{ m: 2, display: 'flex', maxWidth: 500, border: '2px solid #324673', borderRadius: 3, boxShadow: '0px 10px 25px 0px #324673e0', justifyContent: 'center' }}>
-            <Box sx={{ m: 2, color: '#0077B5' }}>
+          <Box ref={jokeRef} id='joke' sx={{ m: 2, display: 'flex', maxWidth: 500, border: '2px solid #4ca67b', borderRadius: 3, boxShadow: '0px 10px 0px 0px #38a771e0', justifyContent: 'center' }}>
+            <Box sx={{ m: 2, color: '#4ca67b' }}>
               <h3>No.</h3>
             </Box>
           </Box>

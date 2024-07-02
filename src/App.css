@@ -1,8 +1,5 @@
 body {
-    background: #3E5151;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: linear-gradient(to right top, #0f2027, #2b4c57, #456c7c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #page-container {
@@ -13,18 +10,20 @@ body {
     padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: #000000;
+    color: #ffffff;
+    line-height: 36px;
 }
 p {
-    color: #000000;
+    color: #ffffff;
+    line-height: 26px;
 }
 
 body {
   margin: 0px;
   overflow-x: hidden;
-  font-family: Pixel Code, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Ubuntu mono, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #324673;
+  color: #ffffff;
 }
