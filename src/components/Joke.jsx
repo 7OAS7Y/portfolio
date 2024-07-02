@@ -26,7 +26,7 @@ const Joke = () => {
     return () => {
       jokeRef.current.removeEventListener('mouseenter', onMouseEnter)
     }
-  }, [jokeRef])
+  }, [])
 
   function onMouseEnter() {
 
