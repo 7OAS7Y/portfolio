@@ -16,13 +16,15 @@
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
     "@pixi/react": "^7.1.2",
+    "@react-three/fiber": "^8.16.8",
+    "@types/three": "^0.166.0",
     "gsap": "^3.12.5",
-    "pixi.js": "^8.2.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "theme-ui": "^0.16.2"
+    "theme-ui": "^0.16.2",
+    "three": "^0.166.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
