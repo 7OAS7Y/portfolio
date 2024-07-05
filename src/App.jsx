@@ -5,6 +5,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Joke from './components/Joke';
+import { useRef } from 'react';
+import { useFrame, Canvas } from '@react-three/fiber';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import './App.css'
@@ -36,6 +38,37 @@ const pages = [
   },
 ];
 
+function Spin() {
+  const meshRef = useRef();
+
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x += 0.01;
+      meshRef.current.rotation.y += 0.01;
+    }
+  });
+
+  return (
+    <mesh ref={meshRef}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="orange" />
+    </mesh>
+  );
+
+}
+
+function ThreeScene() {  
+  
+  return (
+    <Canvas style={{ position: 'absolute', top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }}>
+      <ambientLight />
+      <directionalLight position={[4, 7, 10]} />
+        <Spin />
+    </Canvas>
+  )
+
+}
+
 
 
 function App() {
@@ -51,6 +84,7 @@ function App() {
           )
         })}
       </Box>
+      <ThreeScene />
     </>
   )
 }

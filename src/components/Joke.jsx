@@ -14,9 +14,6 @@ const Joke = () => {
   const maxX = 360
   const maxY = 10
 
-  let randomX = Math.floor(Math.random() * (maxX - minX + 1) + minX)
-  let randomY = Math.floor(Math.random() * (maxY - minY + 1) + minY)
-
   const jokeRef = useRef(null)
 
   useEffect(() => {
@@ -30,8 +27,8 @@ const Joke = () => {
 
   function onMouseEnter() {
 
-    randomX = Math.floor(Math.random() * (maxX - minX + 1) + minX)
-    randomY = Math.floor(Math.random() * (maxY - minY + 1) + minY)
+    const randomX = Math.floor(Math.random() * (maxX - minX + 1) + minX)
+    const randomY = Math.floor(Math.random() * (maxY - minY + 1) + minY)
     
     gsap.to(jokeRef.current, { x: randomX, y: randomY, duration: .2  })
   }
