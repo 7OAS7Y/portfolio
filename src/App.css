@@ -1,6 +1,5 @@
 body {
-    /* background: linear-gradient(to right top, #0f2027, #2b4c57, #456c7c);  */
-    background-color: #000;
+    background: linear-gradient(to right top, #0f2027, #2b4c57, #456c7c); 
 }
 
 #page-container {
