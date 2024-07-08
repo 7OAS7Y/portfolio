@@ -38,12 +38,12 @@ const pages = [
   },
 ];
 
-function Spin() {
+function Gizmo() {
   const meshRef = useRef();
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += 0.01;
+      // meshRef.current.rotation.x += 0.01;
       meshRef.current.rotation.y += 0.01;
     }
   });
@@ -57,13 +57,13 @@ function Spin() {
 
 }
 
-function ThreeScene() {  
+function Scene() {  
   
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }}>
-      <ambientLight />
-      <directionalLight position={[4, 7, 10]} />
-        <Spin />
+      {/* <ambientLight /> */}
+      <directionalLight position={[30, 0, 10]} />
+        <Gizmo />
     </Canvas>
   )
 
@@ -84,7 +84,7 @@ function App() {
           )
         })}
       </Box>
-      <ThreeScene />
+      <Scene />
     </>
   )
 }
