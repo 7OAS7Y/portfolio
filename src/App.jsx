@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Joke from './components/Joke';
 import { useRef } from 'react';
 import { useFrame, Canvas } from '@react-three/fiber';
+import { useTexture } from '@react-three/drei';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import './App.css'
@@ -36,34 +37,44 @@ const pages = [
     name: "joke",
     element: <Joke />,
   },
-];
+]
 
-function Gizmo() {
-  const meshRef = useRef();
-
+function Gizmo( {posX, posY} ) {
+  const meshRef = useRef()
+  const textureMap = useTexture('/src/assets/code.jpg')
   useFrame(() => {
-    if (meshRef.current) {
-      // meshRef.current.rotation.x += 0.01;
-      meshRef.current.rotation.y += 0.01;
-    }
-  });
+    if (!meshRef.current) return
+      meshRef.current.rotation.y += 0.01
+      meshRef.current.position.setX(posX)
+      meshRef.current.position.setY(posY)
+      meshRef.current.scale.set(0.3, 0.3, 0.3)
+  })
 
   return (
     <mesh ref={meshRef}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="orange" />
+      <sphereGeometry args={[1, 36, 36]} />
+      <meshStandardMaterial map={textureMap} />
     </mesh>
-  );
+  )
 
 }
 
-function Scene() {  
-  
+function Scene() {
+  const items = []
+  const g = 2
+  let count = 0
+  for (let i = (-g); i <= g; i++) {
+    for (let j = (-g); j <= g; j++) {
+      count++
+      items.push(<Gizmo key={count} posX={i} posY={j} />)
+    }
+    console.log(items)
+  }
+
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }}>
-      {/* <ambientLight /> */}
       <directionalLight position={[30, 0, 10]} />
-        <Gizmo />
+      {items}
     </Canvas>
   )
 
