@@ -36,7 +36,7 @@ const Joke = () => {
 
   return (
     <Stack>
-      <Box sx={{ m: 4, maxWidth: 800, border: '2px solid #4ca67b', borderRadius: 3, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <Box sx={{ m: 4, maxWidth: 800, border: '2px solid #A5C9FF', borderRadius: 3, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         <Box sx={{ m: 10, }}>
           <h1>Feel free to say no, but will you hire me?</h1>
         </Box>
