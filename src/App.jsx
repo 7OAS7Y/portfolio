@@ -5,7 +5,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Joke from './components/Joke';
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { useFrame, Canvas } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { gsap } from "gsap";
@@ -40,29 +40,34 @@ const pages = [
 ]
 
 function Gizmo( {posX, posY} ) {
+
   const meshRef = useRef()
-  const textureMap = useTexture('/src/assets/code.jpg')
+
   useFrame(() => {
     if (!meshRef.current) return
       meshRef.current.rotation.y += 0.01
       meshRef.current.position.setX(posX)
       meshRef.current.position.setY(posY)
-      meshRef.current.scale.set(0.3, 0.3, 0.3)
+      meshRef.current.scale.set(0.4, 0.4, 0.4)
   })
+
+  const colorMap = useTexture('src/assets/PavingStones092_1K-JPG_Color.jpg')
 
   return (
     <mesh ref={meshRef}>
       <sphereGeometry args={[1, 36, 36]} />
-      <meshStandardMaterial map={textureMap} />
+      <meshStandardMaterial map={colorMap} />
     </mesh>
   )
 
 }
 
 function Scene() {
+
   const items = []
   const g = 2
   let count = 0
+  
   for (let i = (-g); i <= g; i++) {
     for (let j = (-g); j <= g; j++) {
       count++
@@ -73,8 +78,10 @@ function Scene() {
 
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }}>
-      <directionalLight position={[30, 0, 10]} />
-      {items}
+      <Suspense fallback={null}>
+        <directionalLight position={[0, 0, 10]} />
+        {items}
+      </Suspense>
     </Canvas>
   )
 

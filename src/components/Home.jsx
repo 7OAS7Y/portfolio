@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <Stack>
-      <Box sx={{ m: 4, maxWidth: 800, border: '2px solid #4ca67b', borderRadius: 3, }}>
+      <Box sx={{ m: 4, maxWidth: 800, border: '2px solid #A5C9FF', borderRadius: 3, }}>
         <Box id='animate-text-box' sx={{ m: 4, }}>
           <h1>Joshua Crothers</h1>
           <p>Frontend Web Developer</p>
