@@ -73,7 +73,7 @@ function Scene() {
       count++
       items.push(<Gizmo key={count} posX={i} posY={j} />)
     }
-    console.log(items)
+    // console.log(items)
   }
 
   return (
