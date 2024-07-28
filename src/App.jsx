@@ -39,23 +39,23 @@ const pages = [
   },
 ]
 
-function Gizmo( {posX, posY} ) {
+function Gizmo( {posX, radius} ) {
 
   const meshRef = useRef()
 
   useFrame(() => {
     if (!meshRef.current) return
-      meshRef.current.rotation.y += 0.01
+      meshRef.current.rotation.y += 0.003
       meshRef.current.position.setX(posX)
-      meshRef.current.position.setY(posY)
       meshRef.current.scale.set(0.4, 0.4, 0.4)
+      
   })
 
-  const colorMap = useTexture('src/assets/PavingStones092_1K-JPG_Color.jpg')
+  const colorMap = useTexture('src/assets/sphereTexture.jpg')
 
   return (
     <mesh ref={meshRef}>
-      <sphereGeometry args={[1, 36, 36]} />
+      <sphereGeometry args={[radius, 144, 144]} />
       <meshStandardMaterial map={colorMap} />
     </mesh>
   )
@@ -65,21 +65,20 @@ function Gizmo( {posX, posY} ) {
 function Scene() {
 
   const items = []
-  const g = 2
+  const g = 1
   let count = 0
+  let radius = 5
   
   for (let i = (-g); i <= g; i++) {
-    for (let j = (-g); j <= g; j++) {
       count++
-      items.push(<Gizmo key={count} posX={i} posY={j} />)
-    }
-    // console.log(items)
+      items.push(<Gizmo key={count} posX={i} radius={radius} />)
+      radius *= 0.5
   }
 
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }}>
       <Suspense fallback={null}>
-        <directionalLight position={[0, 0, 10]} />
+        <directionalLight position={[10, 0, 0]} />
         {items}
       </Suspense>
     </Canvas>
