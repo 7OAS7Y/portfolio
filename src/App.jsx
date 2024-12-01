@@ -78,7 +78,7 @@ function Scene() {
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }}>
       <Suspense fallback={null}>
-        <directionalLight position={[10, 0, 0]} />
+        <directionalLight position={[10, 0, 5]} />
         {items}
       </Suspense>
     </Canvas>
