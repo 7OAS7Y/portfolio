@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react'
-import { Box } from '@mui/system'
-import Stack from '@mui/material/Stack'
-import Link from '@mui/material/Link'
+import React, { useEffect, useRef } from 'react';
+import { Box } from '@mui/system';
+import Stack from '@mui/material/Stack';
+import Link from '@mui/material/Link';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 

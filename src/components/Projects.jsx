@@ -1,6 +1,6 @@
-import React from 'react'
-import { Box } from '@mui/system'
-import Stack from '@mui/material/Stack'
+import React from 'react';
+import { Box } from '@mui/system';
+import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
 
 const Projects = () => {

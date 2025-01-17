@@ -10,7 +10,7 @@ import { useFrame, Canvas } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import './App.css'
+import './App.css';
 
 
 
@@ -38,6 +38,8 @@ const pages = [
     element: <Joke />,
   },
 ]
+
+console.log(pages);
 
 function Gizmo( {posX, radius} ) {
 
@@ -98,7 +100,7 @@ function App() {
             <Page key={index} name={page.name}>
               {page.element}
             </Page>
-          )
+          );
         })}
       </Box>
       <Scene />
