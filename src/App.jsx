@@ -5,8 +5,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Joke from './components/Joke';
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { useFrame, Canvas } from '@react-three/fiber';
+import { useTexture } from '@react-three/drei';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import './App.css';
@@ -34,32 +35,36 @@ const pages = [
     name: "joke",
     element: <Joke />,
   },
-];
+]
+
+function Gizmo( {posX, radius} ) {
 
 function Gizmo() {
   const meshRef = useRef();
+
   useFrame(() => {
     if (meshRef.current) {
-      // meshRef.current.rotation.y += 0.01;
+      // meshRef.current.rotation.x += 0.01;
+      meshRef.current.rotation.y += 0.01;
     }
   });
 
   return (
     <mesh ref={meshRef}>
-      <sphereGeometry args={[1, 38, 38]} />
-      <meshStandardMaterial color={"white"} />
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="orange" />
     </mesh>
-  );
+  )
 
 }
 
-function Scene() {   
+function Scene() {  
   
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }}>
       {/* <ambientLight /> */}
-      <directionalLight position={[20, 0, 100]} />
-      <Gizmo />
+      <directionalLight position={[30, 0, 10]} />
+        <Gizmo />
     </Canvas>
   )
 

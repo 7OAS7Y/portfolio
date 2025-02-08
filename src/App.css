@@ -1,5 +1,6 @@
 body {
-    background: linear-gradient(to right top, #0f2027, #2b4c57, #456c7c); 
+    /* background: linear-gradient(to right top, #0f2027, #2b4c57, #456c7c);  */
+    background: #3B3B3B;
 }
 
 #page-container {
@@ -11,11 +12,11 @@ body {
     z-index: 1;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
+    color: #A5FFC9;
     line-height: 36px;
 }
 p {
-    color: #ffffff;
+    color: #A5FFC9;
     line-height: 26px;
 }
 

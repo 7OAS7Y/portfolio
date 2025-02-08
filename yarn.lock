@@ -790,10 +790,17 @@
   resolved "https://registry.npmjs.org/@react-spring/types/-/types-9.6.1.tgz"
   integrity sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==
 
+<<<<<<< HEAD
 "@react-three/drei@^9.109.1":
   version "9.109.1"
   resolved "https://registry.npmjs.org/@react-three/drei/-/drei-9.109.1.tgz"
   integrity sha512-tkZW1lpkGW0jg4bb3yiaQgM9gkpf6b2osleQnQu55VC8UFDDMIX+fNB8TTQ9fqhA/lpQ7UszM7XSUGak1xYjvg==
+=======
+"@react-three/drei@^9.108.3":
+  version "9.108.3"
+  resolved "https://registry.npmjs.org/@react-three/drei/-/drei-9.108.3.tgz"
+  integrity sha512-414jioJq9hGaq24kCfwCZ2mQ9HLkikICTmDjxU5eHaOYwT6MiSrfxZnFDsUNWUwY0GeuF9M8hJjsGagCtGA22Q==
+>>>>>>> a7c68e2032e5448f3362de4722fe5daaa3b1da2f
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@mediapipe/tasks-vision" "0.10.8"
@@ -1563,9 +1570,15 @@ define-properties@^1.2.0, define-properties@^1.2.1:
     object-keys "^1.1.1"
 
 detect-gpu@^5.0.28:
+<<<<<<< HEAD
   version "5.0.40"
   resolved "https://registry.npmjs.org/detect-gpu/-/detect-gpu-5.0.40.tgz"
   integrity sha512-5v4jDN/ERdZZitD29UiLjV9Q9+lDfw2OhEJACIqnvdWulVZCy2K6EwonZ/VKyo4YMqvSIzGIDmojX3jGL3dLpA==
+=======
+  version "5.0.38"
+  resolved "https://registry.npmjs.org/detect-gpu/-/detect-gpu-5.0.38.tgz"
+  integrity sha512-36QeGHSXYcJ/RfrnPEScR8GDprbXFG4ZhXsfVNVHztZr38+fRxgHnJl3CjYXXjbeRUhu3ZZBJh6Lg0A9v0Qd8A==
+>>>>>>> a7c68e2032e5448f3362de4722fe5daaa3b1da2f
   dependencies:
     webgl-constants "^1.1.1"
 

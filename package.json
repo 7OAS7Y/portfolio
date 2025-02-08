@@ -16,7 +16,11 @@
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
     "@pixi/react": "^7.1.2",
+<<<<<<< HEAD
     "@react-three/drei": "^9.109.1",
+=======
+    "@react-three/drei": "^9.108.3",
+>>>>>>> a7c68e2032e5448f3362de4722fe5daaa3b1da2f
     "@react-three/fiber": "^8.16.8",
     "@types/three": "^0.166.0",
     "gsap": "^3.12.5",
